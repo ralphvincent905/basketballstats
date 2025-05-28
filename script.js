@@ -5,17 +5,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function createPlayerRows(teamTable) {
     let table = document.getElementById(teamTable).querySelector("tbody");
-    
+
     for (let i = 1; i <= 12; i++) {
         let row = table.insertRow();
         row.innerHTML = `
             <td><input type='number' value='${i}' class='player-number'></td>
             <td><input type='text' class='player-name' placeholder='Player Name'></td>
             <td><input type='number' class='fouls'></td>
-            <td><input type='number' class='points' oninput="updateScore('${teamTable}')"></td>
-            <td><input type='number'></td>
-            <td><input type='number'></td>
-            <td><input type='number'></td>
+            <td><input type='number' class='points' readonly></td>
+            <td><input type='number' class='twoPt' oninput="updateScore('${teamTable}')"></td>
+            <td><input type='number' class='threePt' oninput="updateScore('${teamTable}')"></td>
+            <td><input type='number' class='fta' oninput="updateScore('${teamTable}')"></td>
             <td><input type='number'></td>
             <td><input type='number'></td>
             <td><input type='number'></td>
@@ -30,8 +30,14 @@ function updateScore(teamTable) {
     let table = document.getElementById(teamTable);
     let scoreDisplay = document.getElementById(teamTable === "team1Table" ? "team1Score" : "team2Score");
 
-    table.querySelectorAll(".points").forEach(input => {
-        totalScore += parseInt(input.value) || 0;
+    table.querySelectorAll("tbody tr").forEach(row => {
+        let twoPt = parseInt(row.querySelector(".twoPt").value) || 0;
+        let threePt = parseInt(row.querySelector(".threePt").value) || 0;
+        let fta = parseInt(row.querySelector(".fta").value) || 0;
+        let playerPoints = (twoPt * 2) + (threePt * 3) + (fta * 1);
+        
+        row.querySelector(".points").value = playerPoints; // Update individual player score
+        totalScore += playerPoints; // Add to total team score
     });
 
     scoreDisplay.textContent = totalScore;
