@@ -1,0 +1,66 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 10px;
+    font-size: 14px;
+}
+
+/* League Title */
+h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Team Section Styling */
+.team {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Team Name Input */
+.team-name input {
+    width: 250px; /* Bigger text box for team name */
+    font-size: 14px;
+    padding: 5px;
+}
+
+/* Team Score Styling */
+h2 {
+    font-size: 18px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 4px;
+    text-align: center;
+}
+
+/* Input Fields */
+input {
+    text-align: center;
+    font-size: 12px;
+    width: 50px;
+}
+
+.player-name {
+    width: 140px; /* Bigger player name text box */
+}
+
+/* Button Styling */
+button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
