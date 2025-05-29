@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function createPlayerRows(teamTable) {
     let table = document.getElementById(teamTable).querySelector("tbody");
 
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 1; i <= 15; i++) {
         let row = table.insertRow();
         row.innerHTML = `
             <td><input type='number' value='${i}' class='player-number'></td>
@@ -16,6 +16,9 @@ function createPlayerRows(teamTable) {
             <td><input type='number' class='twoPt' oninput="updateScore('${teamTable}')"></td>
             <td><input type='number' class='threePt' oninput="updateScore('${teamTable}')"></td>
             <td><input type='number' class='fta' oninput="updateScore('${teamTable}')"></td>
+            <td><input type='number'></td>
+            <td><input type='number'></td>
+            <td><input type='number'></td>
             <td><input type='number'></td>
             <td><input type='number'></td>
             <td><input type='number'></td>
