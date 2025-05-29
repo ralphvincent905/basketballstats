@@ -21,9 +21,6 @@ function createPlayerRows(teamTable) {
             <td><input type='number'></td>
             <td><input type='number'></td>
             <td><input type='number'></td>
-            <td><input type='number'></td>
-            <td><input type='number'></td>
-            <td><input type='number'></td>
         `;
     }
 }
