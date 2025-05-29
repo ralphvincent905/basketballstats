@@ -9,7 +9,7 @@ function createPlayerRows(teamTable) {
     for (let i = 1; i <= 15; i++) {
         let row = table.insertRow();
         row.innerHTML = `
-            <td><input type='number' value='${i}' class='player-number'></td>
+            <td><input type='text'></td>
             <td><input type='text' class='player-name' placeholder='Player Name'></td>
             <td><input type='number' class='fouls'></td>
             <td><input type='number' class='points' readonly></td>
